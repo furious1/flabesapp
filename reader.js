@@ -10,20 +10,21 @@ var mongoose = require("mongoose")
 feed("http://feeds.feedburner.com/RockPaperShotgun?format=xml", function(err, articles){
     if (err) throw err;
 //    console.log(articles);
-    
+
     var feeds =[];
     for (var i=0; i<articles.length; i++){
-      feeds[i] = articles[i].title;
+      feeds[i] = articles[i];
     };
-    console.log(feeds.length);
+    console.log(feeds);
     var db = mongoose.connection;
     db.on("error",console.error);
     db.once("open",function(){
-      
+
     });
-    
-    
+
+
 });
+
 
 
 // console.log(feeds)
