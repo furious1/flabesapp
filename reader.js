@@ -14,7 +14,7 @@ feed("http://feeds.feedburner.com/RockPaperShotgun?format=xml", function(err, ar
     var feeds =[];
     for (var i=0; i<articles.length; i++){
       feeds[i] = articles[i];
-    };
+    }
     console.log(feeds);
     var db = mongoose.connection;
     db.on("error",console.error);
